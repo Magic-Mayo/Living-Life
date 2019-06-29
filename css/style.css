@@ -1,0 +1,39 @@
+body {
+    background-image: url('../images/house.jpg');
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+#search {
+    width: 960px;
+}
+
+.search-form {
+    position: relative;
+    margin-top: 50px;
+    transform: translateX(-52.5%);
+    left: 50%;
+}
+
+.search-results {
+    position: absolute;
+    bottom: 10vh;
+    /* width: 1600px; */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.title {
+    font-size: 3em;
+}
+
+#basic-addon1 {
+    height: 38px;
+}
+
+.caret {
+    position: absolute;
+    margin-top: 8px;
+    left: -40px;
+}
