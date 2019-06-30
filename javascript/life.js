@@ -35,6 +35,7 @@ $.each(urls, function(u){
         console.log(response)
     })
 $('#search').val('');
+$('#collapseOne').removeClass('show')
 })
 })
 
