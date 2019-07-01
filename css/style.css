@@ -19,7 +19,7 @@ body {
 .search-results {
     position: absolute;
     top: 20vh;
-    /* width: 1600px; */
+    width: 1200px;
     left: 50%;
     transform: translateX(-50%);
 }

@@ -169,15 +169,11 @@ $(document).on('click', '.search-btn', function(event){
         //     decMaxTemp.push(decTemp[0].data.weather[i].maxtempF);
         //     decMinTemp.push(decTemp[0].data.weather[i].mintempF);
         // }
-        // console.log(octTemp[0].data.weather[0].mintempF)
-        // console.log(octTemp)
-        average(octMaxTemp)
-        average(octMinTemp)
+        $('#weather').empty();
+        $('#weather').append('<p>Oct Avg High: ' + average(octMaxTemp) + '</p>').addClass('temps');
+        $('#weather').append('<p>Oct Avg Low: ' + average(octMinTemp) + '</p>');
     })
 
-    // console.log('octMinTemp array before averaging: ', octMinTemp)
     $('#search').val('');
     $('#collapseOne').removeClass('show')
 })
-
-// Make on click for jobs, weather, crime, and neighborhood tabs so it will switch between them
