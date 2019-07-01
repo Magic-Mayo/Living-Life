@@ -25,11 +25,9 @@ let novMinTemp = []
 let decMinTemp = []
 
 function average(input){
-    console.log(input)
-    console.log(input.length)
-    const i = arr.reduce((a,b)=>a+b, 0);
-    console.log(i)
-    return i/arr.length;
+    const i = input.reduce((a,b)=>a+b, 0);
+    console.log(Math.round(i/input.length))
+    return Math.round(i/input.length);
 }
 
 $(document).on('click', '.search-btn', function(event){
@@ -47,7 +45,7 @@ $(document).on('click', '.search-btn', function(event){
     const oct = '&date=2018-10-01&enddate=2018-10-31';
     const nov = '&date=2018-11-01&enddate=2018-11-30';
     const dec = '&date=2018-12-01&enddate=2018-12-31';
-    const queryURL = 'https://api.worldweatheronline.com/premium/v1/past-weather.ashx/?format=json&key=800def3bb80c42488da184817192906&q=' + city;
+    const queryURL = 'https://api.worldweatheronline.com/premium/v1/past-weather.ashx/?format=json&key=80c4283111cd411388653908190107&q=' + city;
     const ajaxJan = $.ajax({
         url: queryURL + jan,
         method: 'GET',
@@ -109,75 +107,77 @@ $(document).on('click', '.search-btn', function(event){
         async: true,
         });
 
-    $.when(ajaxJan, ajaxFeb, ajaxMar, ajaxApr, ajaxMay, ajaxJun, ajaxJul, ajaxAug, ajaxSep, ajaxOct, ajaxNov, ajaxDec).then(function(janTemp,febTemp,marTemp,aprTemp,mayTemp,junTemp,julTemp,augTemp,sepTemp,octTemp,novTemp,decTemp){
+    $.when(ajaxOct).then(function(octTemp){
+    // $.when(ajaxJan, ajaxFeb, ajaxMar, ajaxApr, ajaxMay, ajaxJun, ajaxJul, ajaxAug, ajaxSep, ajaxOct, ajaxNov, ajaxDec).then(function(janTemp,febTemp,marTemp,aprTemp,mayTemp,junTemp,julTemp,augTemp,sepTemp,octTemp,novTemp,decTemp){
+        console.log(octTemp)
+        // for (let i=0; i<janTemp[0].data.weather.length; i++){
+        //     janMaxTemp.push(janTemp[0].data.weather[i].maxtempF);
+        //     janMinTemp.push(janTemp[0].data.weather[i].mintempF);
+        // }
 
-        for (let i=0; i<janTemp[0].data.weather.length; i++){
-            janMaxTemp.push(janTemp[0].data.weather[i].maxtempF);
-            janMinTemp.push(janTemp[0].data.weather[i].mintempF);
-        }
+        // for (let i=0; i<febTemp[0].data.weather.length; i++){
+        //     febMaxTemp.push(febTemp[0].data.weather[i].maxtempF);
+        //     febMinTemp.push(febTemp[0].data.weather[i].mintempF);
+        // }
 
-        for (let i=0; i<febTemp[0].data.weather.length; i++){
-            febMaxTemp.push(febTemp[0].data.weather[i].maxtempF);
-            febMinTemp.push(febTemp[0].data.weather[i].mintempF);
-        }
+        // for (let i=0; i<marTemp[0].data.weather.length; i++){
+        //     marMaxTemp.push(marTemp[0].data.weather[i].maxtempF);
+        //     marMinTemp.push(marTemp[0].data.weather[i].mintempF);
+        // }
 
-        for (let i=0; i<marTemp[0].data.weather.length; i++){
-            marMaxTemp.push(marTemp[0].data.weather[i].maxtempF);
-            marMinTemp.push(marTemp[0].data.weather[i].mintempF);
-        }
-
-        for (let i=0; i<aprTemp[0].data.weather.length; i++){
-            aprMaxTemp.push(aprTemp[0].data.weather[i].maxtempF);
-            aprMinTemp.push(aprTemp[0].data.weather[i].mintempF);
-        }
+        // for (let i=0; i<aprTemp[0].data.weather.length; i++){
+        //     aprMaxTemp.push(aprTemp[0].data.weather[i].maxtempF);
+        //     aprMinTemp.push(aprTemp[0].data.weather[i].mintempF);
+        // }
         
-        for (let i=0; i<mayTemp[0].data.weather.length; i++){
-            mayMaxTemp.push(mayTemp[0].data.weather[i].maxtempF);
-            mayMinTemp.push(mayTemp[0].data.weather[i].mintempF);
+        // for (let i=0; i<mayTemp[0].data.weather.length; i++){
+        //     mayMaxTemp.push(mayTemp[0].data.weather[i].maxtempF);
+        //     mayMinTemp.push(mayTemp[0].data.weather[i].mintempF);
+        // }
+
+        // for (let i=0; i<junTemp[0].data.weather.length; i++){
+        //     junMaxTemp.push(junTemp[0].data.weather[i].maxtempF);
+        //     junMinTemp.push(junTemp[0].data.weather[i].mintempF);
+        // }
+
+        // for (let i=0; i<julTemp[0].data.weather.length; i++){
+        //     julMaxTemp.push(julTemp[0].data.weather[i].maxtempF);
+        //     julMinTemp.push(julTemp[0].data.weather[i].mintempF);
+        // }
+
+        // for (let i=0; i<augTemp[0].data.weather.length; i++){
+        //     augMaxTemp.push(augTemp[0].data.weather[i].maxtempF);
+        //     augMinTemp.push(augTemp[0].data.weather[i].mintempF);
+        // }
+
+        // for (let i=0; i<sepTemp[0].data.weather.length; i++){
+        //     sepMaxTemp.push(sepTemp[0].data.weather[i].maxtempF);
+        //     sepMinTemp.push(sepTemp[0].data.weather[i].mintempF);
+        // }
+
+        for (let i=0; i<octTemp.data.weather.length; i++){
+            octMinTemp.push(parseInt(octTemp.data.weather[i].mintempF));
+            octMaxTemp.push(parseInt(octTemp.data.weather[i].maxtempF));
         }
 
-        for (let i=0; i<junTemp[0].data.weather.length; i++){
-            junMaxTemp.push(junTemp[0].data.weather[i].maxtempF);
-            junMinTemp.push(junTemp[0].data.weather[i].mintempF);
-        }
+        // for (let i=0; i<novTemp[0].data.weather.length; i++){
+        //     novMaxTemp.push(novTemp[0].data.weather[i].maxtempF);
+        //     novMinTemp.push(novTemp[0].data.weather[i].mintempF);
+        // }
 
-        for (let i=0; i<julTemp[0].data.weather.length; i++){
-            julMaxTemp.push(julTemp[0].data.weather[i].maxtempF);
-            julMinTemp.push(julTemp[0].data.weather[i].mintempF);
-        }
-
-        for (let i=0; i<augTemp[0].data.weather.length; i++){
-            augMaxTemp.push(augTemp[0].data.weather[i].maxtempF);
-            augMinTemp.push(augTemp[0].data.weather[i].mintempF);
-        }
-
-        for (let i=0; i<sepTemp[0].data.weather.length; i++){
-            sepMaxTemp.push(sepTemp[0].data.weather[i].maxtempF);
-            sepMinTemp.push(sepTemp[0].data.weather[i].mintempF);
-        }
-
-        for (let i=0; i<octTemp[0].data.weather.length; i++){
-            octMinTemp.push(parseInt(octTemp[0].data.weather[i].mintempF));
-            octMaxTemp.push(parseInt(octTemp[0].data.weather[i].maxtempF));
-        }
-
-        for (let i=0; i<novTemp[0].data.weather.length; i++){
-            novMaxTemp.push(novTemp[0].data.weather[i].maxtempF);
-            novMinTemp.push(novTemp[0].data.weather[i].mintempF);
-        }
-
-        for (let i=0; i<decTemp[0].data.weather.length; i++){
-            decMaxTemp.push(decTemp[0].data.weather[i].maxtempF);
-            decMinTemp.push(decTemp[0].data.weather[i].mintempF);
-        }
+        // for (let i=0; i<decTemp[0].data.weather.length; i++){
+        //     decMaxTemp.push(decTemp[0].data.weather[i].maxtempF);
+        //     decMinTemp.push(decTemp[0].data.weather[i].mintempF);
+        // }
         // console.log(octTemp[0].data.weather[0].mintempF)
         // console.log(octTemp)
+        average(octMaxTemp)
+        average(octMinTemp)
     })
 
-    // console.log(octMinTemp)
+    // console.log('octMinTemp array before averaging: ', octMinTemp)
     $('#search').val('');
     $('#collapseOne').removeClass('show')
-    average(octMinTemp)
 })
 
 // Make on click for jobs, weather, crime, and neighborhood tabs so it will switch between them
