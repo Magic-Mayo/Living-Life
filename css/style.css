@@ -52,3 +52,16 @@ body {
 .life p {
     font-size: 16px;
 }
+
+#myTabContent {
+    background-color: #ffffff;
+    margin-top: 13px;
+    left: -10px;
+    position: relative;
+    border: 1px solid #dee2e6;
+}
+
+.nav-link {
+    border-bottom: 1px solid #ffffff;
+    z-index: 1;
+}
