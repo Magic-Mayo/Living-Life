@@ -16,10 +16,10 @@
         </div>
         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#toggler">
 
-            <div class="input-group mt-3">
+            <div class="input-group my-2 d-flex justify-content-center">
               <form>
-                <input type="text" class="form-control search" id="search" placeholder="City, State or ZIP code">
-                <input class="btn btn-success mb-2 search-btn" type="submit" id="button-addon1" value="search"></input></form>
+                <input type="text" class="form-control search d-inline-block" id="search" placeholder="City, State or ZIP code">
+                <input class="btn btn-success mb-1 search-btn" type="submit" id="button-addon1" value="Search"></input></form>
             </div>
         </div>
     </div>                   
@@ -30,10 +30,10 @@
             <div class="card-header">
               <ul class="nav nav-tabs card-header-tabs">
                 <li class="nav-item">
-                  <a class="nav-link active jobs-tab" href="#">Jobs</a>
+                  <a class="nav-link jobs-tab" href="#">Jobs</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link weather-tab" href="#">Weather</a>
+                  <a class="nav-link active weather-tab" href="#">Weather</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link hood-tab" href="#">Neighborhood</a>
@@ -43,7 +43,22 @@
                 </li>
               </ul>
             </div>
-            <div class="card-body">
+            <div class="card-body jobs-body">
+              <h5 class="card-title"></h5>
+              <p class="card-text"></p>
+              <a href="#" class="btn btn-primary d-none"></a>
+            </div>
+            <div class="card-body weather-body d-none">
+              <h5 class="card-title"></h5>
+              <p class="card-text"></p>
+              <a href="#" class="btn btn-primary d-none"></a>
+            </div>
+            <div class="card-body hood-body d-none">
+              <h5 class="card-title"></h5>
+              <p class="card-text"></p>
+              <a href="#" class="btn btn-primary d-none"></a>
+            </div>
+            <div class="card-body crime-body d-none">
               <h5 class="card-title"></h5>
               <p class="card-text"></p>
               <a href="#" class="btn btn-primary d-none"></a>
