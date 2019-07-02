@@ -10,60 +10,71 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="jumbotron text-center py-3"><h1 class="font-italic title">Living Life</h1></div>
-    <div class="container-fluid">
-        <div class="row">
-            <form class="col-sm-12">
-                <div class="form-group mb-3 mt-2 d-inline-block search-form">
-                    <div class="d-inline-block caret">
-                        
-                        <div class="dropdown">
-                            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            </button>
-
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <li class="dropdown-item" type="checkbox" data-toggle="">Action</li>
-                            <li class="dropdown-item" type="checkbox">Action</li>
-                            <li class="dropdown-item" type="checkbox">Action</li>
-                        </div>
-                    </div>
-
-                </div>
-                    <div class="form-group d-inline-flex flex-row mt-2">
-                    <input type="text" class="form-control" id="search" placeholder="Enter a location">
-                    <button type="submit" class="btn btn-success mb-2 search-btn">Search</button>
-                </div>
-            </form>
+    <div class="card">
+        <div class="card-header search-bar" id="headingOne">
+            <button class="btn btn-link" id="toggler" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"><h1 class="font-italic life">Living Life<p>Click to search</p></h1></button>
         </div>
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#toggler">
+
+            <div class="input-group my-2 d-flex justify-content-center">
+              <form>
+                <input type="text" class="form-control search d-inline-block" id="search" placeholder="City, State or ZIP code">
+                <input class="btn btn-success mb-1 search-btn" type="submit" id="button-addon1" value="Search"></input></form>
+            </div>
+        </div>
+    </div>                   
+
+    <div class="container-fluid">
 
         <div class="card text-center search-results d-inline-block">
             <div class="card-header">
               <ul class="nav nav-tabs card-header-tabs">
                 <li class="nav-item">
-                  <a class="nav-link active jobs-tab" href="#">Jobs</a>
+                  <a class="nav-link" id="jobs-tab" data-toggle="tab" href="#jobs" role="tab" aria-controls="jobs" aria-selected="true">Jobs</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link weather-tab" href="#">Weather</a>
+                  <a class="nav-link active" id="weather-tab" data-toggle="tab" href="#weather" role="tab" aria-controls="weather" aria-selected="true">Weather</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link hood-tab" href="#">Neighborhood</a>
+                  <a class="nav-link" id="hood-tab" data-toggle="tab" href="#hood" role="tab" aria-controls="hood" aria-selected="true">Neighborhood</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link crime-tab" href="#">Crime Rate</a>
+                  <a class="nav-link" id="crime-tab" data-toggle="tab" href="#crime" role="tab" aria-controls="crime" aria-selected="true">Crime Rate</a>
                 </li>
               </ul>
+              <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade" id="jobs" role="tabpanel" aria-labelledby="jobs-tab">...</div>
+                    <div class="tab-pane fade show active" id="weather" role="tabpanel" aria-labelledby="weather-tab"></div>
+                    <div class="tab-pane fade" id="hood" role="tabpanel" aria-labelledby="hood-tab"></div>
+                    <div class="tab-pane fade" id="crime" role="tabpanel" aria-labelledby="crime-tab"></div>
+                  </div>
             </div>
-            <div class="card-body">
+            <!-- <div class="card-body jobs-body d-none">
               <h5 class="card-title"></h5>
               <p class="card-text"></p>
-              <a href="#" class="btn btn-primary d-none"></a>
+              <a class="btn btn-primary d-none"></a>
             </div>
+            <div class="card-body weather-body">
+              <h5 class="card-title"></h5>
+              <p class="card-text"></p>
+              <a class="btn btn-primary d-none"></a>
+            </div>
+            <div class="card-body hood-body d-none">
+              <h5 class="card-title"></h5>
+              <p class="card-text"></p>
+              <a class="btn btn-primary d-none"></a>
+            </div>
+            <div class="card-body crime-body d-none">
+              <h5 class="card-title"></h5>
+              <p class="card-text"></p>
+              <a class="btn btn-primary d-none"></a>
+            </div> -->
         </div>
     </div>
-
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
+    <script src="javascript/life.js"></script>
 </body>
 </html>
