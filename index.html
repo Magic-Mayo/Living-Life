@@ -22,7 +22,11 @@
                 <input class="btn btn-success mb-1 search-btn" type="submit" id="button-addon1" value="Search"></input></form>
             </div>
         </div>
-    </div>                   
+    </div>
+
+    <div class="text-center search-results">
+        <div id="map"></div>
+    </div>
 
     <div class="container-fluid">
 
@@ -77,4 +81,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="javascript/life.js"></script>
 </body>
+<script src="javascript/map.js"></script>
+<!-- initMap is a function declared in map.js -->
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAKsf4wV2-Yiv2OCyh430DERNzihp_v50&callback=initMap"></script>
 </html>

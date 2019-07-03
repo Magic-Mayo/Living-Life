@@ -17,8 +17,8 @@ body {
 }
 
 .search-results {
-    position: absolute;
-    top: 20vh;
+    position: relative; /* absolute */
+    margin-top: 5%; /* top 20vh should be a % resposive */
     width: 1200px;
     left: 50%;
     transform: translateX(-50%);
@@ -64,4 +64,11 @@ body {
 .nav-link {
     border-bottom: 1px solid #ffffff;
     z-index: 1;
+}
+
+#map {
+    margin-top: 5%; 
+    height: 450px;
+    width: 100%;
+    background: black;
 }
