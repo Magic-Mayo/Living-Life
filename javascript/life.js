@@ -34,6 +34,8 @@ function average(input){
 $(document).on('click', '.search-btn', function(event){
     event.preventDefault();
     const city = $('#search').val().trim();
+    // call the initMap with the city
+    initMap(city);
     const jan = '&date=2018-01-01&enddate=2018-01-31';
     const feb = '&date=2018-02-01&enddate=2018-02-28';
     const mar = '&date=2018-03-01&enddate=2018-03-31';
