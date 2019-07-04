@@ -4,11 +4,12 @@ let lows = [];
 $(document).on('click', '.search-btn', function(event){
     event.preventDefault();
     const city = $('#search').val().trim();
-    const queryURL = 'https://api.worldweatheronline.com/premium/v1/weather.ashx/?format=json&key=80c4283111cd411388653908190107&mca=yes&q=' + city;
+    const queryURL = 'https://api.worldweatheronline.com/premium/v1/weather.ashx/?format=json&key=80c4283111cd411388653908190107&mca=yes&cc=yes&q=' + city;
     $.ajax({
         url: queryURL,
         method: 'GET'
     }).then(function(response){
+        console.log(response.data)
         const average = response.data.ClimateAverages[0].month
         $('#weather').empty();
         for (let i=0; i<average.length;i++){
@@ -21,6 +22,7 @@ $(document).on('click', '.search-btn', function(event){
             weather.append('High: ' + highs[i], ' Low: ' + lows[i]).addClass('temps');
             $('#weather').append(weather);
         }
+        
         console.log(highs)
     })
         $('#search').val('');
