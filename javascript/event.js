@@ -17,7 +17,7 @@ $(document).on('click','.search-btn', function(event){
         for (let i=0;i<event.length;i++){
             const title = $('<div>')
             title.append(event[i].title,event[i].description)
-            $('.card-body').append(title)
+            $('.#events').append(title)
         }
         
     }) 
