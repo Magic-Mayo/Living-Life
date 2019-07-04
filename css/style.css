@@ -6,6 +6,7 @@ body {
 }
 
 #search {
+    position: relative;
     width: 960px;
 }
 
@@ -17,9 +18,9 @@ body {
 }
 
 .search-results {
-    position: absolute;
-    bottom: 10vh;
-    /* width: 1600px; */
+    position: relative;
+    margin-top: 5%;
+    width: 75%;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -36,4 +37,32 @@ body {
     position: absolute;
     margin-top: 8px;
     left: -40px;
+}
+
+.search-bar {
+    height: 75px;
+}
+
+.life {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.life p {
+    font-size: 16px;
+}
+
+#myTabContent {
+    background-color: #ffffff;
+    margin-top: 13px;
+    left: -10px;
+    position: relative;
+    border: 1px solid #dee2e6;
+}
+
+.nav-link {
+    border-bottom: 1px solid #ffffff;
+    z-index: 1;
 }
