@@ -29,11 +29,17 @@ console.log(results);
 
 for(let i = 0; i < results.length; i++) {
     
-    let localJobs = $("<ul>").text(results[i]); 
+    const localJobs = $("<ul>");
+    const jobUrl = results[i].redirect_url;
+    console.log(jobUrl); //displays the response.results[i].title
+    
+    const jobSite = $("<a>").text(results[i].title).attr("href", jobUrl);
+    localJobs.append(jobSite);
     $("#jobs").append(localJobs);
+    // results.attr(); 
+
 }
 
-// jobResults.attr(); ****can I get the redirect_url to be a link when clicking the job title?
 
 // console.log(jobDiv);
 
