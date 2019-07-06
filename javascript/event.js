@@ -18,7 +18,7 @@ $(document).on('click','.search-btn', function(event){
         dataType: 'jsonp'
         
     }).then(function(response){
-        //const res = JSON.parse(response);
+        const res = response;
         console.log(res.events.event);
         // const eventLocal = JSON.parse(response.events.event)
         // console.log(eventLocal);
