@@ -2,7 +2,29 @@
 $("#button-addon1").on( "click", function(evt) {
     evt.preventDefault();
     console.log( $( this ).val() );
+    const city = $('#search').val().trim();
+    let url = "https://google-maps-places.herokuapp.com/places/"+city;
+    $.ajax({
+        url: url,
+        method: 'GET'
+    }).done(function(response){
+        let data = response.results;
+        //change the center of the map
+        map = new google.maps.Map(
+            document.getElementById('map'), {zoom: 12, center: data[0].geometry.location}
+        );
+
+        for (let i = 0; i < data.length; i++){
+            let location = data[i].geometry.location;
+            let marker = new google.maps.Marker({position: location, map: map});
+        }
+    }),
+    error(function(error, msg){
+        console.log(error);
+        console.log(msg);
+    })
   });
+
 
 function initMap(city){
     if (city === undefined){
