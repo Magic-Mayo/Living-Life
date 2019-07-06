@@ -6,6 +6,7 @@ body {
 }
 
 #search {
+    position: relative;
     width: 960px;
 }
 
@@ -17,9 +18,9 @@ body {
 }
 
 .search-results {
-    position: relative; /* absolute */
-    margin-top: 5%; /* top 20vh should be a % resposive */
-    width: 1200px;
+    position: relative;
+    margin-top: 5%;
+    width: 75%;
     left: 50%;
     transform: translateX(-50%);
 }
