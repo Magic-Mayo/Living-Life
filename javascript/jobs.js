@@ -48,7 +48,7 @@ for(let i = 0; i < results.length; i++) {
 
 })
     
-                    $("#search").val(" ");
+                    
     // }
 }); 
     
