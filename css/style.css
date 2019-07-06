@@ -94,3 +94,9 @@ body {
 
 
 
+#map {
+    margin-top: 5%; 
+    height: 450px;
+    width: 100%;
+    background: black;
+}
