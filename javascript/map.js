@@ -11,7 +11,7 @@ function initMap(city){
     console.log(city + " initMap");
     const initLocation = {lat:33.35597 , lng:  -111.7918};
     let map = new google.maps.Map(
-        document.getElementById('map'), {zoom: 10, center: initLocation}
+        document.getElementById('map'), {zoom: 12, center: initLocation}
     );
     // how to put markers
     //let marker = new google.maps.Marker({position: initLocation, map: map});
@@ -38,7 +38,7 @@ function initMap(city){
             let data = response.results;
             //change the center of the map
             map = new google.maps.Map(
-                document.getElementById('map'), {zoom: 10, center: data[0].geometry.location}
+                document.getElementById('map'), {zoom: 12, center: data[0].geometry.location}
             );
 
             for (let i = 0; i < data.length; i++){
