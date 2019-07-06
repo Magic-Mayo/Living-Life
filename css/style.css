@@ -5,6 +5,10 @@ body {
     background-repeat: no-repeat;
 }
 
+.container-fluid {
+    margin-bottom: 20px;
+}
+
 #search {
     position: relative;
     width: 960px;
@@ -57,9 +61,7 @@ body {
 #myTabContent {
     background-color: #ffffff;
     margin-top: 13px;
-    left: -10px;
     position: relative;
-    border: 1px solid #dee2e6;
 }
 
 .nav-link {
