@@ -31,7 +31,7 @@ for(let i = 0; i < results.length; i++) {
     
     const localJobs = $("<ul>");
     const jobUrl = results[i].redirect_url;
-    console.log(jobUrl); //displays the response.results[i].title
+    // console.log(jobUrl); //displays the response.results[i].title
     
     const jobSite = $("<a>").text(results[i].title).attr("href", jobUrl);
     localJobs.append(jobSite);
