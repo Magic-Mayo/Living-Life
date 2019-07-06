@@ -44,6 +44,5 @@ $(document).on('click', '.search-btn', function(event){
         }
         console.log($('#weather>div').data('high'))
     })
-        $('#search').val('');
         $('#collapseOne').removeClass('show')
 })
