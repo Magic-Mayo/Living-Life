@@ -23,23 +23,46 @@ $(document).on('click', '.search-btn', function(event){
         }
         
         for (let i=0; i<highs.length; i++){
-            const weather = $('<div>');
-            weather.append(monthHighs[i] + highs[i] + ' ' + monthLows[i] + lows[i]).addClass('temps-' + months[i]).data('low', lows[i]).data('high', highs[i]);
-            $('#weather').append(weather);
+            const weatherHigh = $('<div>');
+            const weatherLow = $('<div>');
+            weatherHigh.append(monthHighs[i] + highs[i]).addClass('temps-high');
+            weatherLow.append(monthLows[i] + lows[i]).addClass('temps-low');
+            $('#weather').append(weatherHigh, weatherLow);
             if (highs[i]>=100){
-                weather.css('background-color', 'red')
+                weatherHigh.css('background-color', 'red');
+            }
+            if (lows[i]>=100){
+                weatherLow.css('background-color', 'red');
             }
             else if (highs[i]<=99 && highs[i]>=80){
-                weather.css('background-color', 'orange')
+                weatherHigh.css('background-color', 'orange');
+            }
+            else if (lows[i]<=99 && lows[i]>=80){
+                weatherLow.css('background-color', 'orange');
             }
             else if (highs[i]<=79 && highs[i]>=60){
-                weather.css('background-color', 'green')
+                weatherHigh.css('background-color', 'green');
+            }
+            else if (lows[i]<=79 && lows[i]>=60){
+                weatherLow.css('background-color', 'green');
+            }
+            else if (highs[i]<=59 && highs[i]>=40){
+                weatherHigh.css('background-color', 'lightblue');
+            }
+            else if (lows[i]<=59 && lows[i]>=40){
+                weatherLow.css('background-color', 'lightblue');
             }
             else if (highs[i]<=39 && highs[i]>=20){
-                weather.css('background-color', 'light blue')
+                weatherHigh.css('background-color', 'blue')
             }
-            else if (highs[i]<=19 && highs[i]>=0){
-                weather.css('background-color', 'blue')
+            else if (lows[i]<=39 && lows[i]>=20){
+                weatherLow.css('background-color', 'blue')
+            }
+            else if (highs[i]<=19){
+                weatherHigh.css('background-color', 'darkblue')
+            }
+            else if (lows[i]<=19){
+                weatherLow.css('background-color', 'darkblue')
             }
         }
         console.log($('#weather>div').data('high'))
