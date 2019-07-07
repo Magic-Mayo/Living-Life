@@ -70,8 +70,8 @@ body {
 /* ....................collapsible................................ */
 
 .jobList {
-    background-color: #777;
-    color: white;
+    background-color: whitesmoke;
+    color: rgb(69, 114, 196);
     cursor: pointer;
     padding: 18px;
     width: 100%;
@@ -81,11 +81,11 @@ body {
     font-size: 15px;
   }
   
-  .active, .jobDiv:hover {
-      background-color: #555;
+  .active, .jobSite:hover {
+      background-color: rgb(221, 214, 214);
     }
     
-    .jobInfo {
+    .jobDiv {
     padding: 0 18px;
     display: none;
     overflow: hidden;
