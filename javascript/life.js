@@ -16,19 +16,17 @@ $(document).on('click', '.search-btn', function(event){
         const average = response.data.ClimateAverages[0].month;
         const currentCond = response.data.current_condition[0];
         $('#weather').prepend('Current Temp: ' + currentCond.temp_F)
-        for (let i=0; i<average.length;i++){
+        for (let i=0; i<12;i++){
             highs.push(Math.round(average[i].absMaxTemp_F));
             lows.push(Math.round(average[i].avgMinTemp_F));
-        }
-        
-        for (let i=0; i<highs.length; i++){
             const weatherRow = $('<tr>').append(
                     $('<td>').text(months[i]),
                     $('<td>').text(highs[i]).attr('high', highs[i]).data('high', highs[i]).addClass('temp-high'),
                     $('<td>').text(lows[i]).attr('low', lows[i]).addClass('temp-low')
                 ).addClass(months[i]);
-
+    
                 $('.weather-table').append(weatherRow);
+
                 // if (highs[i]>=100){
                 //     $('.temp-high').addClass('100').removeClass('80 60');
                 //     $('.100').css('background-color', 'red');
@@ -71,8 +69,8 @@ $(document).on('click', '.search-btn', function(event){
                 // else if ($('.temp-low').attr('low')<=19){
                 //     $('.temp-low').css('background-color', 'darkblue');
                 // }
-            }
             console.log(highs[i]);
-        })
+        }
+    })
         $('#collapseOne').removeClass('show');
 })
