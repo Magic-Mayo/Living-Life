@@ -75,3 +75,8 @@ body {
     width: 100%;
     background: black;
 }
+
+.table {
+    width: 90%;
+    margin-bottom: 0;
+}
