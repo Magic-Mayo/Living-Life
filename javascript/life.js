@@ -29,48 +29,48 @@ $(document).on('click', '.search-btn', function(event){
                 ).addClass(months[i]);
 
                 $('.weather-table').append(weatherRow);
-                if (highs[i]>=100){
-                    $('.temp-high').addClass('100').removeClass('80 60');
-                    $('.100').css('background-color', 'red');
-                }
-                if ($('.temp-low').attr('low')>=100){
-                    $('.temp-low').css('background-color', 'red');
-                }
-                else if (highs[i]<=99 && highs[i]>=80){
-                    $('.temp-high').addClass('80');
-                    $('.80').css('background-color', 'orange');
-                }
-                else if ($('.temp-low').attr('low')<=99 && $('.temp-low').attr('low')>=80){
-                    $('.temp-low').css('background-color', 'orange');
-                }
-                else if (highs[i]<=79 && highs[i]>=60){
-                    $('.temp-high').addClass('60');
-                    $('.60').css('background-color', 'green');
-                }
-                else if ($('.temp-low').attr('low')<=79 && $('.temp-low').attr('low')>=60){
-                    $('.temp-low').css('background-color', 'green');
-                }
-                else if (highs[i]<=59 && highs[i]>=40){
-                    $('.temp-high').addClass('40');
-                    $('.40').css('background-color', 'lightblue');
-                }
-                else if ($('.temp-low').attr('low')<=59 && $('.temp-low').attr('low')>=40){
-                    $('.temp-low').css('background-color', 'lightblue');
-                }
-                else if (highs[i]<=39 && highs[i]>=20){
-                    $('.temp-high').addClass('20');
-                    $('.20').css('background-color', 'blue');
-                }
-                else if ($('.temp-low').attr('low')<=39 && $('.temp-low').attr('low')>=20){
-                    $('.temp-low').css('background-color', 'blue');
-                }
-                else if (highs[i]<=19){
-                    $('.temp-high').addClass('0');
-                    $('.0').css('background-color', 'darkblue');
-                }
-                else if ($('.temp-low').attr('low')<=19){
-                    $('.temp-low').css('background-color', 'darkblue');
-                }
+                // if (highs[i]>=100){
+                //     $('.temp-high').addClass('100').removeClass('80 60');
+                //     $('.100').css('background-color', 'red');
+                // }
+                // if ($('.temp-low').attr('low')>=100){
+                //     $('.temp-low').css('background-color', 'red');
+                // }
+                // else if (highs[i]<=99 && highs[i]>=80){
+                //     $('.temp-high').addClass('80');
+                //     $('.80').css('background-color', 'orange');
+                // }
+                // else if ($('.temp-low').attr('low')<=99 && $('.temp-low').attr('low')>=80){
+                //     $('.temp-low').css('background-color', 'orange');
+                // }
+                // else if (highs[i]<=79 && highs[i]>=60){
+                //     $('.temp-high').addClass('60');
+                //     $('.60').css('background-color', 'green');
+                // }
+                // else if ($('.temp-low').attr('low')<=79 && $('.temp-low').attr('low')>=60){
+                //     $('.temp-low').css('background-color', 'green');
+                // }
+                // else if (highs[i]<=59 && highs[i]>=40){
+                //     $('.temp-high').addClass('40');
+                //     $('.40').css('background-color', 'lightblue');
+                // }
+                // else if ($('.temp-low').attr('low')<=59 && $('.temp-low').attr('low')>=40){
+                //     $('.temp-low').css('background-color', 'lightblue');
+                // }
+                // else if (highs[i]<=39 && highs[i]>=20){
+                //     $('.temp-high').addClass('20');
+                //     $('.20').css('background-color', 'blue');
+                // }
+                // else if ($('.temp-low').attr('low')<=39 && $('.temp-low').attr('low')>=20){
+                //     $('.temp-low').css('background-color', 'blue');
+                // }
+                // else if (highs[i]<=19){
+                //     $('.temp-high').addClass('0');
+                //     $('.0').css('background-color', 'darkblue');
+                // }
+                // else if ($('.temp-low').attr('low')<=19){
+                //     $('.temp-low').css('background-color', 'darkblue');
+                // }
             }
             console.log(highs[i]);
         })
