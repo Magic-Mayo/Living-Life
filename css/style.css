@@ -73,5 +73,10 @@ body {
     margin-top: 5%; 
     height: 450px;
     width: 100%;
-    background: black;
+    /* background: black; */
+    opacity: .7;
+}
+
+#map:hover{
+    opacity: 1;
 }
