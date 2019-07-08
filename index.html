@@ -56,8 +56,29 @@
                 <div class="tab-pane fade" id="jobs" role="tabpanel" aria-labelledby="jobs-tab">Local Job Listings:<br></div>
                 <div class="tab-pane fade show active" id="weather" role="tabpanel" aria-labelledby="weather-tab">
                     <div class="card mt-3">
+                        <div id="togglerForecast" type="button" data-toggle="collapse" data-target="#collapseForecast" aria-expanded="true" aria-controls="collapseForecast">
+                            <div class="card-header">5 Day Forecast</div>
+                        </div>
+                        <div id="collapseForecast" class="collapse" aria-labelledby="headingForecast" data-parent="#togglerForecast">
+                            <div class="card-body d-flex justify-content-center">
+                                <table class="table table-sm table-hover" id='weather-table'>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Date</th>
+                                            <th scope="col">High Temp(F)</th>
+                                            <th scope="col">Low Temp(F)</th>
+                                            <th scope="col">Sunrise</th>
+                                            <th scope="col">Sunset</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="forecast-table"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mt-3">
                         <div id="togglerAvg" type="button" data-toggle="collapse" data-target="#collapseAvg" aria-expanded="true" aria-controls="collapseAvg">
-                            <div class="card-header">Average Monthly Temps</div>
+                            <div class="card-header">Monthly Averages</div>
                         </div>
                         <div id="collapseAvg" class="collapse" aria-labelledby="headingAvg" data-parent="#togglerAvg">
                             <div class="card-body d-flex justify-content-center">
@@ -65,8 +86,9 @@
                                     <thead>
                                         <tr>
                                             <th scope="col">Month</th>
-                                            <th scope="col">Average high</th>
-                                            <th scope="col">Average low</th>
+                                            <th scope="col">Average High(F)</th>
+                                            <th scope="col">Average Low(F)</th>
+                                            <th scope="col">Average Rainfall(in)</th>
                                         </tr>
                                     </thead>
                                     <tbody class="weather-table"></tbody>
