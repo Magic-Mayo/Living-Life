@@ -55,7 +55,7 @@
             </div>
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade" id="jobs" role="tabpanel" aria-labelledby="jobs-tab">Local Job Listings:<br></div>
-                <div class="tab-pane fade show active" id="weather" role="tabpanel" aria-labelledby="weather-tab">
+                <div class="tab-pane fade show active d-none" id="weather" role="tabpanel" aria-labelledby="weather-tab">
                     <div class="card mt-3">
                         <div id="togglerForecast" type="button" data-toggle="collapse" data-target="#collapseForecast" aria-expanded="true" aria-controls="collapseForecast">
                             <div class="card-header">5 Day Forecast</div>
@@ -89,7 +89,7 @@
                                             <th scope="col">Month</th>
                                             <th scope="col">Average High(F)</th>
                                             <th scope="col">Average Low(F)</th>
-                                            <th scope="col">Average Rainfall(in)</th>
+                                            <th scope="col">Average Daily Rainfall(mm)</th>
                                         </tr>
                                     </thead>
                                     <tbody class="weather-table"></tbody>
