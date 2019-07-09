@@ -1,27 +1,10 @@
-
-$("#button-addon1").on( "click", function(evt) {
+$("#city").on( "keyup", function(evt) {
+    if (evt.key == 'Enter'){
     evt.preventDefault();
     console.log( $( this ).val() );
-    const city = $('#search').val().trim();
-    let url = "https://google-maps-places.herokuapp.com/places/"+city;
-    $.ajax({
-        url: url,
-        method: 'GET'
-    }).done(function(response){
-        let data = response.results;
-        //change the center of the map
-        map = new google.maps.Map(
-            document.getElementById('map'), {zoom: 12, center: data[0].geometry.location}
-        );
-
-        for (let i = 0; i < data.length; i++){
-            let location = data[i].geometry.location;
-            let marker = new google.maps.Marker({position: location, map: map});
-        }
-    }, function(error, msg){
-        console.log(error);
-        console.log(msg);
-        })
+    const city = $('#city').val().trim();
+    initMap(city);
+    }
 });
 
 
@@ -64,7 +47,37 @@ function initMap(city){
 
             for (let i = 0; i < data.length; i++){
                 let location = data[i].geometry.location;
+                let address = data[i].formatted_address;
+                let name = data[i].name;
+                let rating = data[i].rating;
+            
+                let contentString = '<div id="content">'+
+                                    '<div id="siteNotice">'+
+                                    '</div>'+
+                                    '<h3 id="firstHeading" class="firstHeading">'+ name +'</h3>'+
+                                    '<div id="bodyContent">'+
+                                    '<p><b>Address: </b>'+ address +'</p>'+
+                                    '<p><b>Rating: </b>'+ rating +'</p>'+
+                                    '</div>'+
+                                    '</div>';
+
+                let infowindow = new google.maps.InfoWindow({
+                    content: contentString
+                });
+
                 let marker = new google.maps.Marker({position: location, map: map});
+                
+                // marker.addListener('click', function() {
+                //     infowindow.open(map, marker);
+                // });
+
+                google.maps.event.addListener(marker, 'mouseover', function () {
+                    infowindow.open(map, marker);
+                });
+            
+                google.maps.event.addListener(marker, 'mouseout', function () {
+                    infowindow.close(map, marker);
+                });
             }
         },
         error: function(error, msg){
@@ -76,4 +89,3 @@ function initMap(city){
         console.log(response)
     }).catch(function(){console.log("hi")}) */
 }
-
