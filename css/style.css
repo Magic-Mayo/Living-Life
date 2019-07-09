@@ -24,7 +24,7 @@ body {
 
 .search-results {
     position: relative;
-    margin-top: 5%;
+    margin-top: 2%;
     width: 75%;
     left: 50%;
     transform: translateX(-50%);
