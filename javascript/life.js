@@ -1,3 +1,27 @@
+$(document).on('load', function(){
+    preloadMyImages();
+})
+
+// Function for preloading images
+function preloadMyImages(){
+    const imageList = [
+        "../images/cloudy.gif",
+        "../images/hail.gif",
+        "../images/heavyrain.gif",
+        "../images/partlycloudy.gif",
+        "../images/rain.gif",
+        "../images/snow.gif",
+        "../images/storm.gif",
+        "../images/sunny.jpg",
+    ];
+    for(let i = 0; i < imageList.length; i++ ){
+        const imageObject = new Image();
+        imageObject.src = imageList[i];
+    }
+    console.log(imageList)
+}
+
+
 // Empty arrays for adding temps into later on from ajax call
 let highs = [];
 let lows = [];
