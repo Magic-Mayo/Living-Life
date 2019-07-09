@@ -10,16 +10,8 @@ body {
     margin-bottom: 20px;
 }
 
-#search {
-    position: relative;
-    width: 960px;
-}
-
-.search-form {
-    position: relative;
-    margin-top: 50px;
-    transform: translateX(-52.5%);
-    left: 50%;
+#city {
+    width: 75vw;
 }
 
 .search-results {
@@ -32,10 +24,6 @@ body {
 
 .title {
     font-size: 3em;
-}
-
-#basic-addon1 {
-    height: 38px;
 }
 
 .caret {
