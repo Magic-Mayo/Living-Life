@@ -1,27 +1,3 @@
-$(document).on('load', function(){
-    preloadMyImages();
-})
-
-// Function for preloading images
-function preloadMyImages(){
-    const imageList = [
-        "../images/cloudy.gif",
-        "../images/hail.gif",
-        "../images/heavyrain.gif",
-        "../images/partlycloudy.gif",
-        "../images/rain.gif",
-        "../images/snow.gif",
-        "../images/storm.gif",
-        "../images/sunny.jpg",
-    ];
-    for(let i = 0; i < imageList.length; i++ ){
-        const imageObject = new Image();
-        imageObject.src = imageList[i];
-    }
-    console.log(imageList)
-}
-
-
 // Empty arrays for adding temps into later on from ajax call
 let highs = [];
 let lows = [];
@@ -31,7 +7,9 @@ const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 
 $(document).on('click', '.search-btn', function(event){
     event.preventDefault();
     const city = $('#search').val().trim();
-    const queryURL = 'https://api.worldweatheronline.com/premium/v1/weather.ashx/?format=json&key=800def3bb80c42488da184817192906&mca=yes&cc=yes&q=' + city;
+
+    // Second API key 800def3bb80c42488da184817192906
+    const queryURL = 'https://api.worldweatheronline.com/premium/v1/weather.ashx/?format=json&key=80c4283111cd411388653908190107&mca=yes&cc=yes&q=' + city;
     //Empty both tables and current weather conditions on each search
     $('#weather-table > tbody').empty();
     $('#weather > p:first').empty();
@@ -44,6 +22,7 @@ $(document).on('click', '.search-btn', function(event){
         url: queryURL,
         method: 'GET'
     }).then(function(response){
+        $('#weather').removeClass('d-none')
         console.log(response.data);
         const average = response.data.ClimateAverages[0].month;
         const currentCond = response.data.current_condition[0];
@@ -88,7 +67,7 @@ $(document).on('click', '.search-btn', function(event){
                     $('<td>').text(months[i]),
                     $('<td>').text(highs[i]).attr('high', highs[i]).data('high', highs[i]).addClass('temp-high'),
                     $('<td>').text(lows[i]).attr('low', lows[i]).addClass('temp-low'),
-                    $('<td>').text(average[i].avgMonthlyRainfall_inch)
+                    $('<td>').text(Math.round(average[i].avgDailyRainfall*100)/100)
                 ).addClass(months[i]);
     
             $('.weather-table').append(weatherRow);
