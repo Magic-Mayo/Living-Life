@@ -4,9 +4,10 @@ let lows = [];
 
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
-$(document).on('click', '.search-btn', function(event){
+$('#city').on('keyup', function(event){
+    if (event.key == 'Enter'){
     event.preventDefault();
-    const city = $('#search').val().trim();
+    const city = $('#city').val().trim();
 
     // Second API key 800def3bb80c42488da184817192906
     const queryURL = 'https://api.worldweatheronline.com/premium/v1/weather.ashx/?format=json&key=80c4283111cd411388653908190107&mca=yes&cc=yes&q=' + city;
@@ -34,6 +35,7 @@ $(document).on('click', '.search-btn', function(event){
         $('#weather').prepend('<p>Current Temp: ' + currentCond.temp_F + '</p>')
 
         // Setting the background image based on the current weather description for the currently searched city
+        // Need to figure out a way to set a BG for night when past sunset time
         if (currentDesc == 122 || currentDesc == 119){
             $('body').css('background-image', 'url(../images/cloudy.gif)');
         }
@@ -87,4 +89,5 @@ $(document).on('click', '.search-btn', function(event){
     })
         // Collapses nav search bar on search
         $('#collapseOne').removeClass('show');
+    }
 })
