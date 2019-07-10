@@ -106,7 +106,7 @@ body {
     font-size: 15px;
   }
   
-  .active, .jobSite:hover {
+  #jobs, .jobSite:hover {
       background-color: rgb(221, 214, 214);
     }
     

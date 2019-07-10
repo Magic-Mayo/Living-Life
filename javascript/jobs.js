@@ -36,17 +36,17 @@ let applyURL = [];
                 const localJobs = $("<ul>").addClass("jobList");
                 console.log(jobUrl); //displays the website in the results
 
-                const jobDiv = $("<div>").addClass("jobDiv");
+                const jobDiv = $("<div class='card'>").addClass("jobDiv");
                 const jobInfo = results[i].description;
                 jobDiv.append(jobInfo);
                 //console.log(jobInfo); //will provide job details if you're interested
 
 
-                const jobSite = $("<div>").text(results[i].title).addClass("jobSite"); //variable to give the localJobs **removed .attr("href", jobUrl);
+                const jobSite = $("<div class='card'>").text(results[i].title).addClass("jobSite"); //variable to give the localJobs **removed .attr("href", jobUrl);
                 
                 $("#jobs").append(localJobs);
                 
-                const apply = $("<button>");
+                const apply = $("<button type='button' class='btn btn-primary'>");
                 apply.text("Apply!").addClass("apply").attr("href", applyURL[i]);
                 
                 localJobs.append(jobSite).append(jobDiv).append(apply);
