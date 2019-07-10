@@ -1,6 +1,9 @@
 // Empty arrays for adding temps into later on from ajax call
 let highs = [];
 let lows = [];
+const monthHighs = ['Jan avg high: ','Feb avg high: ','Mar avg high: ','Apr avg high: ','May avg high: ','Jun avg high: ','Jul avg high: ','Aug avg high: ','Sep avg high: ','Oct avg high: ','Nov avg high: ','Dec avg high: '];
+const monthLows = ['Jan avg low: ','Feb avg low: ','Mar avg low: ','Apr avg low: ','May avg low: ','Jun avg low: ','Jul avg low: ','Aug avg low: ','Sep avg low: ','Oct avg low: ','Nov avg low: ','Dec avg low: ']
+const months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec']
 
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
@@ -85,6 +88,7 @@ $(document).on('click', '.search-btn', function(event){
             $('.forecast-table').append(forecastRow);
         }
     })
+
         // Collapses nav search bar on search
         $('#collapseOne').removeClass('show');
 })

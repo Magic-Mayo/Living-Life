@@ -13,14 +13,9 @@
 
 body {
     background-image: url('../images/house.jpg');
-    background-size: 105% 105%;
+    background-size: 100% 100%;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    overflow-x: hidden;
-}
-
-.container-fluid {
-    margin-bottom: 20px;
 }
 
 #search {
@@ -75,13 +70,16 @@ body {
 #myTabContent {
     background-color: #ffffff;
     margin-top: 13px;
+    left: -10px;
     position: relative;
+    border: 1px solid #dee2e6;
 }
 
 .nav-link {
     border-bottom: 1px solid #ffffff;
     z-index: 1;
 }
+<<<<<<< HEAD
 .collapsed-description {
     height:0;
     overflow:hidden;
@@ -103,48 +101,12 @@ body {
 
 
 
-
-/* ....................collapsible................................ */
-
-.jobList {
-    background-color: whitesmoke;
-    color: rgb(69, 114, 196);
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
-  }
-  
-  .active, .jobSite:hover {
-      background-color: rgb(221, 214, 214);
-    }
-    
-    .jobDiv {
-    padding: 0 18px;
-    display: none;
-    overflow: hidden;
-    background-color: #f1f1f1;
-}
-
-
+=======
 
 #map {
     margin-top: 5%; 
     height: 450px;
     width: 100%;
-    /* background: black; */
-    opacity: .7;
+    background: black;
 }
-
-#map:hover{
-    opacity: 1;
-}
-
-
-.table {
-    width: 90%;
-    margin-bottom: 0;
-}
+>>>>>>> 32abdf83615d1d4855db22d2c46c9c40aedcc456
