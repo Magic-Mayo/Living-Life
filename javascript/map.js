@@ -1,7 +1,10 @@
-
-$("#button-addon1").on( "click", function(evt) {
+$("#city").on( "keyup", function(evt) {
     evt.preventDefault();
+    if (evt.key == 'Enter'){
     console.log( $( this ).val() );
+    const city = $('#search').val().trim();
+    initMap(city);
+    }
   });
 
 function initMap(city){
@@ -43,16 +46,47 @@ function initMap(city){
 
             for (let i = 0; i < data.length; i++){
                 let location = data[i].geometry.location;
+                let address = data[i].formatted_address;
+                let name = data[i].name;
+                let rating = data[i].rating;
+            
+                let contentString = '<div id="content">'+
+                                    '<div id="siteNotice">'+
+                                    '</div>'+
+                                    '<h3 id="firstHeading" class="firstHeading">'+ name +'</h3>'+
+                                    '<div id="bodyContent">'+
+                                    '<p><b>Address: </b>'+ address +'</p>'+
+                                    '<p><b>Rating: </b>'+ rating +'</p>'+
+                                    '</div>'+
+                                    '</div>';
+
+                let infowindow = new google.maps.InfoWindow({
+                    content: contentString
+                });
+
                 let marker = new google.maps.Marker({position: location, map: map});
+                
+                // marker.addListener('click', function() {
+                //     infowindow.open(map, marker);
+                // });
+
+                google.maps.event.addListener(marker, 'mouseover', function () {
+                    infowindow.open(map, marker);
+                });
+            
+                google.maps.event.addListener(marker, 'mouseout', function () {
+                    infowindow.close(map, marker);
+                });
             }
         },
         error: function(error, msg){
             console.log(error);
             console.log(msg);
         }
-    }) /* .then(function(response){
+        
+    });
+    /* .then(function(response){
         console.log("hello")
         console.log(response)
     }).catch(function(){console.log("hi")}) */
 }
-
