@@ -4,6 +4,7 @@ $("#city").on( "keyup", function(evt) {
     console.log( $( this ).val() );
     const city = $('#search').val().trim();
     initMap(city);
+    }
   });
 
 function initMap(city){
