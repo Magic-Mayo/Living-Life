@@ -2,7 +2,7 @@ $("#city").on( "keyup", function(evt) {
     evt.preventDefault();
     if (evt.key == 'Enter'){
     console.log( $( this ).val() );
-    const city = $('#search').val().trim();
+    const city = $('#city').val().trim();
     initMap(city);
     }
   });
