@@ -5,7 +5,6 @@ $("#button-addon1").on( "click", function(evt) {
     initMap(city);
   });
 
-
 function initMap(city){
     if (city === undefined){
         city = "gilbert,az";
