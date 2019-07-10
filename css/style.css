@@ -1,8 +1,9 @@
 body {
     background-image: url('../images/house.jpg');
-    background-size: 100% 100%;
+    background-size: 105% 105%;
     background-attachment: fixed;
     background-repeat: no-repeat;
+    overflow-x: hidden;
 }
 
 .container-fluid {
@@ -74,4 +75,9 @@ body {
     height: 450px;
     width: 100%;
     background: black;
+}
+
+.table {
+    width: 90%;
+    margin-bottom: 0;
 }

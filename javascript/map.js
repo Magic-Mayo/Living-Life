@@ -18,12 +18,11 @@ $("#button-addon1").on( "click", function(evt) {
             let location = data[i].geometry.location;
             let marker = new google.maps.Marker({position: location, map: map});
         }
-    }),
-    error(function(error, msg){
+    }, function(error, msg){
         console.log(error);
         console.log(msg);
-    })
-  });
+        })
+});
 
 
 function initMap(city){
