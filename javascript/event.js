@@ -14,8 +14,8 @@ $(document).on('click', '.search-btn', function (event) {
     //Tosolve this not in righ way but sort of
     //We can ensure we are on the correct tab before executing any code
     const isEventsTabSelected = $('a[class="nav-link active"]').text().trim() === 'Events';
-
-    if (isEventsTabSelected) {
+    $('#events').empty()
+    // if (isEventsTabSelected) {
         event.preventDefault();
         const city = $('#search').val().trim();
         console.log('OUt city', city, $('#search'))
@@ -71,5 +71,5 @@ $(document).on('click', '.search-btn', function (event) {
     }
 
 })
-
-
+        $('#search').val('');
+})
