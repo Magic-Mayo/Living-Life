@@ -79,6 +79,7 @@ body {
     border-bottom: 1px solid #ffffff;
     z-index: 1;
 }
+<<<<<<< HEAD
 .collapsed-description {
     height:0;
     overflow:hidden;
@@ -100,6 +101,7 @@ body {
 
 
 
+=======
 
 #map {
     margin-top: 5%; 
@@ -107,3 +109,4 @@ body {
     width: 100%;
     background: black;
 }
+>>>>>>> 32abdf83615d1d4855db22d2c46c9c40aedcc456
