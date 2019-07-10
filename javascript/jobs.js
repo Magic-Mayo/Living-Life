@@ -55,7 +55,7 @@ let applyURL = [];
                 }
                 const coll = $(".jobSite");
                 
-                
+                $('#jobs').removeClass('d-none');
                 for (let i = 0; i < coll.length; i++) {             
                     $('.jobDiv').css("display", "none");
                     coll[i].addEventListener("click", function () {
