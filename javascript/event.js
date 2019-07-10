@@ -1,13 +1,12 @@
 $('#city').on('keyup', function (event) {
+    event.preventDefault();
     if (event.key == 'Enter'){
     ///Decide which tab we are in this ONE place and then invoke the correct function
     //Tosolve this not in righ way but sort of
     //We can ensure we are on the correct tab before executing any code
-    const isEventsTabSelected = $('a[class="nav-link active"]').text().trim() === 'Events';
-    $('#events').empty()
-        event.preventDefault();
+        $('#events').empty()
         const city = $('#city').val().trim();
-        console.log('OUt city', city, $('#search'))
+        console.log('OUt city', city, $('#city'))
 
         let queryURL = 'https://api.eventful.com/json/events/search?app_key=tBrJGCvpbKcsx2jS&location=' + city + '&date=Future&page_size=15'
         $.ajax({
@@ -32,6 +31,5 @@ $('#city').on('keyup', function (event) {
             }
 
         })
-        $('#city').val('');
     }
 })
