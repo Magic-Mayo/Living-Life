@@ -22,10 +22,9 @@
         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#toggler">
 
             <div class="input-group my-2 d-flex justify-content-center">
-                <form id="button-addon1">
-                    <input type="text" class="form-control search d-inline-block" id="city" placeholder="City, State">
-                    <!-- <input class="btn btn-success mb-1 search-btn d-inline-block" type="submit" id="button-addon1" value="Search"> -->
-                    </form>
+                <div>
+                    <input type="text" class="form-control search" id="city" placeholder="City, State">
+                </div>
             </div>
         </div>
     </div>
@@ -113,9 +112,9 @@
     <script type="text/javascript" src="javascript/jobs.js"></script>
     <script src="javascript/life.js"></script>
     <script src="javascript/event.js"></script>
+    <script src="javascript/map.js"></script>
+    <!-- initMap is a function declared in map.js -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAKsf4wV2-Yiv2OCyh430DERNzihp_v50&callback=initMap"></script>
     
 </body>
-<script src="javascript/map.js"></script>
-<!-- initMap is a function declared in map.js -->
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAKsf4wV2-Yiv2OCyh430DERNzihp_v50&callback=initMap"></script>
 </html>
