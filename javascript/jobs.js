@@ -1,4 +1,3 @@
-
 $('#city').on("keyup", function (event) {
     event.preventDefault();
     if (event.key == 'Enter'){
