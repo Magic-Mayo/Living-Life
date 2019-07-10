@@ -22,9 +22,9 @@
         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#toggler">
 
             <div class="input-group my-2 d-flex justify-content-center">
-              <form>
-                <input type="text" class="form-control search d-inline-block" id="search" placeholder="City, State or ZIP code">
-                <input class="btn btn-success mb-1 search-btn" type="submit" id="button-addon1" value="Search"></input></form>
+                <div>
+                    <input type="text" class="form-control search" id="city" placeholder="City, State">
+                </div>
             </div>
         </div>
     </div>
@@ -114,19 +114,19 @@
             </div>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/places.js@1.16.4"></script>
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-
+    <script src="javascript/algolia.js"></script>
     <script type="text/javascript" src="javascript/jobs.js"></script>
     <script src="javascript/life.js"></script>
     <script src="javascript/event.js"></script>
+    <script src="javascript/map.js"></script>
+    <!-- initMap is a function declared in map.js -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAKsf4wV2-Yiv2OCyh430DERNzihp_v50&callback=initMap"></script>
     
 
 </body>
-<script src="javascript/map.js"></script>
-<!-- initMap is a function declared in map.js -->
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAKsf4wV2-Yiv2OCyh430DERNzihp_v50&callback=initMap"></script>
 </html>

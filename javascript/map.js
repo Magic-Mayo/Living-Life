@@ -1,5 +1,6 @@
-$("#button-addon1").on( "click", function(evt) {
+$("#city").on( "keyup", function(evt) {
     evt.preventDefault();
+    if (evt.key == 'Enter'){
     console.log( $( this ).val() );
     const city = $('#search').val().trim();
     initMap(city);
@@ -81,7 +82,9 @@ function initMap(city){
             console.log(error);
             console.log(msg);
         }
-    }) /* .then(function(response){
+        
+    });
+    /* .then(function(response){
         console.log("hello")
         console.log(response)
     }).catch(function(){console.log("hi")}) */

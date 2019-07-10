@@ -1,10 +1,14 @@
+
+$('#city').on("keyup", function (event) {
+    event.preventDefault();
+    if (event.key == 'Enter'){
+
 let applyURL = [];
 
-$(document).on("click", ".search-btn", function () {
     event.preventDefault();
 
     $('#jobs').empty();
-    let city = $("#search").val().trim()
+    let city = $("#city").val().trim()
     const queryURL = "https://api.adzuna.com:443/v1/api/jobs/us/search/1?app_id=3c9055a0&app_key=b277b839fa391e86d53c328291a45814&results_per_page=15&where=" + city + " &distance=16.0934&sort_by=date&full_time=1" // Place names or postal codes may be used.
 
 
@@ -77,11 +81,12 @@ $(document).on("click", ".search-btn", function () {
             
             
         })
+    }
 
 })
+
 
 $(document).on("click", ".apply", function(){
 const clickMe = $(this).attr("href");
 window.location.href = clickMe;
 })
-

@@ -23,21 +23,13 @@ body {
     margin-bottom: 20px;
 }
 
-#search {
-    position: relative;
-    width: 960px;
-}
-
-.search-form {
-    position: relative;
-    margin-top: 50px;
-    transform: translateX(-52.5%);
-    left: 50%;
+#city {
+    width: 75vw;
 }
 
 .search-results {
     position: relative;
-    margin-top: 5%;
+    margin-top: 2%;
     width: 75%;
     left: 50%;
     transform: translateX(-50%);
@@ -45,10 +37,6 @@ body {
 
 .title {
     font-size: 3em;
-}
-
-#basic-addon1 {
-    height: 38px;
 }
 
 .caret {
@@ -147,4 +135,8 @@ body {
 .table {
     width: 90%;
     margin-bottom: 0;
+}
+
+.ap-icon-pin {
+    display: none;
 }
