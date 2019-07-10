@@ -5,8 +5,8 @@ let lows = [];
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
 $('#city').on('keyup', function(event){
-    if (event.key == 'Enter'){
     event.preventDefault();
+    if (event.key == 'Enter'){
     const city = $('#city').val().trim();
 
     // Second API key 800def3bb80c42488da184817192906
