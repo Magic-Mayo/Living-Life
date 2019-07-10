@@ -69,3 +69,7 @@ body {
     width: 90%;
     margin-bottom: 0;
 }
+
+.ap-icon-pin {
+    display: none;
+}
