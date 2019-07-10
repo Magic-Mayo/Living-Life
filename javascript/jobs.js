@@ -80,6 +80,6 @@ $(document).on("click", ".search-btn", function () {
 })
 
 $(document).on("click", ".apply", function(){
-const clickMe = $(".apply").attr("href");
+const clickMe = $(this).attr("href");
 window.location.href = clickMe;
 })
