@@ -5,7 +5,6 @@
       container: document.querySelector('#city'),
       templates: {
         value: function(suggestion) {
-            console.log(suggestion)
           return suggestion.name + ', ' + suggestion.administrative;
         }
       }
