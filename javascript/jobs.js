@@ -1,3 +1,5 @@
+let applyURL = [];
+
 $(document).on("click", ".search-btn", function () {
     event.preventDefault();
     $("#jobs").empty();
@@ -24,8 +26,10 @@ $(document).on("click", ".search-btn", function () {
             //looping the results
             for (let i = 0; i < results.length; i++) {
 
+                var jobUrl = results[i].redirect_url;
+                applyURL.push(jobUrl);
+
                 const localJobs = $("<ul>").addClass("jobList");
-                const jobUrl = results[i].redirect_url;
                 console.log(jobUrl); //displays the website in the results
 
                 const jobDiv = $("<div>").addClass("jobDiv");
@@ -34,22 +38,23 @@ $(document).on("click", ".search-btn", function () {
                 //console.log(jobInfo); //will provide job details if you're interested
 
 
-                const jobSite = $("<div>").text(results[i].title).addClass("jobSite").attr("href", jobUrl); //variable to give the localJobs **removed .attr("href", jobUrl);
-                localJobs.append(jobSite).append(jobDiv);
-
+                const jobSite = $("<div>").text(results[i].title).addClass("jobSite"); //variable to give the localJobs **removed .attr("href", jobUrl);
+                
                 $("#jobs").append(localJobs);
-
-
-            }
-            const coll = $(".jobSite");
-        
-            const apply = $("<button>");
-            apply.text("Apply!");
-
-
-            for (let i = 0; i < coll.length; i++) {             
-                $('.jobDiv').css("display", "none");
-                coll[i].addEventListener("click", function () {
+                
+                const apply = $("<button>");
+                apply.text("Apply!").addClass("apply").attr("href", applyURL[i]);
+                
+                localJobs.append(jobSite).append(jobDiv).append(apply);
+                // $(".jobDiv").append(apply);
+                
+                }
+                const coll = $(".jobSite");
+                
+                
+                for (let i = 0; i < coll.length; i++) {             
+                    $('.jobDiv').css("display", "none");
+                    coll[i].addEventListener("click", function () {
                     this.classList.toggle("active");
                     const content = this.nextElementSibling;
                     if (content.style.display === "block") {
@@ -57,15 +62,24 @@ $(document).on("click", ".search-btn", function () {
                     } else {
                         content.style.display = "block";
                     }
+            
                 })
             }
-            $(".jobDiv").append(apply);
 
 
             
-
-
-
+            
+           
+           
+           console.log(jobUrl)
+        //    console.log(apply);
+            
+            
         })
 
+})
+
+$(document).on("click", ".apply", function(){
+const clickMe = $(".apply").attr("href");
+window.location.href = clickMe;
 })
