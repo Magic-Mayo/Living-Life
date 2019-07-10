@@ -1,3 +1,16 @@
+@keyframes collapse {
+    100%{
+        height:0;
+    }
+}
+
+@keyframes uncollapse {
+    100%{
+        height:100%;
+    }
+}
+
+
 body {
     background-image: url('../images/house.jpg');
     background-size: 100% 100%;
@@ -66,3 +79,24 @@ body {
     border-bottom: 1px solid #ffffff;
     z-index: 1;
 }
+.collapsed-description {
+    height:0;
+    overflow:hidden;
+}
+
+
+.collapse-description {
+     animation: collapse 3s forwards; 
+}
+
+.open-description {
+     animation: uncollapse 3s forwards; 
+}
+
+.title-collapse {
+    cursor: pointer;
+}
+
+
+
+
