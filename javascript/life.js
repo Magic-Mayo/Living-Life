@@ -36,28 +36,28 @@ $('#city').on('keyup', function(event){
         // Setting the background image based on the current weather description for the currently searched city
         // Need to figure out a way to set a BG for night when past sunset time
         if (currentDesc == 122 || currentDesc == 119){
-            $('body').css('background-image', 'url(/images/cloudy.gif)');
+            $('body').css('background-image', 'url(images/cloudy.gif)');
         }
         else if (currentDesc == 266 || currentDesc == 263 || currentDesc == 293 || currentDesc == 296 || currentDesc == 299 || currentDesc == 302 || currentDesc == 305 || currentDesc == 308 || currentDesc == 353 || currentDesc == 356 || currentDesc == 359 || currentDesc == 176){
-            $('body').css('background-image', 'url(/images/rain.gif)');
+            $('body').css('background-image', 'url(images/rain.gif)');
         }
         else if (currentDesc == 116){
-            $('body').css('background-image', 'url(/images/partlycloudy.gif)');
+            $('body').css('background-image', 'url(images/partlycloudy.gif)');
         }
         else if (currentDesc == 113){
-            $('body').css('background-image', 'url(/images/sunny.jpg)');
+            $('body').css('background-image', 'url(images/sunny.jpg)');
         }
         else if (currentDesc == 200 || currentDesc == 386 || currentDesc == 389){
-            $('body').css('background-image', 'url(/images/storm.gif)');
+            $('body').css('background-image', 'url(images/storm.gif)');
         }
         else if (currentDesc == 248 || currentDesc == 260 || currentDesc == 143){
-            $('body').css('background-image', 'url(/images/foggy.jpg)');
+            $('body').css('background-image', 'url(images/foggy.jpg)');
         }
         else if (currentDesc == 392 || currentDesc == 395 || currentDesc == 368 || currentDesc == 371 || currentDesc == 338 || currentDesc == 332 || currentDesc == 335 || currentDesc == 329 || currentDesc == 326 || currentDesc == 323 || currentDesc == 230 || currentDesc == 227 || currentDesc == 179){
-            $('body').css('background-image', 'url(/images/snow.gif)');
+            $('body').css('background-image', 'url(images/snow.gif)');
         }
         else if (currentDesc == 374 || currentDesc == 377 || currentDesc == 350 || currentDesc == 365 || currentDesc == 362 || currentDesc == 320 || currentDesc == 317 || currentDesc == 311 || currentDesc == 314 || currentDesc == 284 || currentDesc == 281 || currentDesc == 182 || currentDesc == 185){
-            $('body').css('background-image', 'url(/images/hail.gif)');
+            $('body').css('background-image', 'url(images/hail.gif)');
         }
 
         // Loop to populate monthly average table
