@@ -9,7 +9,7 @@ $('#city').on('keyup', function(event){
     const city = $('#city').val().trim();
 
     // Second API key 800def3bb80c42488da184817192906
-    const queryURL = 'https://api.worldweatheronline.com/premium/v1/weather.ashx/?format=json&key=80c4283111cd411388653908190107&mca=yes&cc=yes&q=' + city;
+    const queryURL = 'https://api.worldweatheronline.com/premium/v1/weather.ashx/?format=json&key=c71a70b1176f4d04828223710192810&mca=yes&cc=yes&q=' + city;
     //Empty both tables and current weather conditions on each search
     $('#weather-table > tbody').empty();
     $('#weather > p:first').empty();
